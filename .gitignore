@@ -1,0 +1,133 @@
+# .gitignore for WordPress
+#
+# This is a slightly modified version of the .gitignore file
+# by @salcode. I left his entire header block intact
+# below for reference.
+#
+# -----------------------------------------------------------------
+# .gitignore for WordPress @salcode
+# ver 20160309
+#
+# From the root of your project run
+# curl -O https://gist.githubusercontent.com/salcode/b515f520d3f8207ecd04/raw/.gitignore
+# to download this file
+#
+# By default all files are ignored.  You'll need to whitelist
+# any mu-plugins, plugins, or themes you want to include in the repo.
+#
+# To ignore uncommitted changes in a file that is already tracked, use 
+# git update-index --assume-unchanged
+#
+# To stop tracking a file that is currently tracked, use 
+# git rm --cached
+#
+# Change Log:
+# 20160309 Added favicon files as whitelisted files
+# 20150302 Added composer.json as a whitelisted file
+# 20150227 Created as fork of https://gist.github.com/salcode/9940509,
+#   this version ignores all files by default
+# -----------------------------------------------------------------
+
+# ignore everything in the root except the "dist/wp-content" directory.
+dist/*
+!dist/wp-content/
+
+# ignore everything in the "dist/wp-content" directory, except:
+# mu-plugins, plugins, and themes directories
+dist/wp-content/*
+!dist/wp-content/mu-plugins/
+!dist/wp-content/plugins/
+!dist/wp-content/themes/
+
+# ignore all mu-plugins, plugins, and themes
+# unless explicitly whitelisted at the end of this file
+dist/wp-content/mu-plugins/*
+dist/wp-content/plugins/*
+dist/wp-content/themes/*
+
+# ignore all files starting with . or ~
+.*
+~*
+
+# ignore node dependency directories
+node_modules/
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# -------------------------
+# BEGIN Whitelisted Files
+# -------------------------
+
+# track these files, if they exist
+!.gitignore
+!.editorconfig
+!.scss-lint.yml
+!README.md
+!CHANGELOG.md
+!composer.json
+!Gruntfile.js
+
+# track favicon files, if they exist
+!dist/android-chrome-*.png
+!dist/apple-touch-icon*.png
+!dist/browserconfig.xml
+!dist/favicon*.png
+!dist/favicon*.ico
+!dist/manifest.json
+!dist/mstile-*.png
+!dist/safari-pinned-tab.svg
+
+# ---
+# BEGIN Themes
+# ---
+
+# unignore theme folder
+# !dist/wp-content/themes/{your-theme-here}/
+
+# ignore theme compiled assets
+# dist/wp-content/themes/{your-theme-here}/assets/*
+
+# unignore theme assets source files
+# !dist/wp-content/themes/{your-theme-here}/assets/src/
+
+# ---
+# BEGIN Plugins
+# ---
+
+# !dist/wp-content/plugins/{your-custom-plugin}
+# !dist/wp-content/mu-plugins/{your-custom-mu-plugin}
+
+# -------------------------
+# END Whitelisted Files
+# -------------------------
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+.DS_Store

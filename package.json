@@ -1,0 +1,20 @@
+{
+  "name": "npm-wordpress-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate package.json for WordPress. Includes WordPress download script.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prewordpress": "curl -O https://wordpress.org/latest.tar.gz",
+    "wordpress": "mkdir -p dist && tar xfz latest.tar.gz && cp -vnr wordpress/* ./dist/ || true && rm -rf ./wordpress && rm -f latest.tar.gz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/communify-agency/npm-wordpress-boilerplate.git"
+  },
+  "author": "Phillip Dodson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/communify-agency/npm-wordpress-boilerplate/issues"
+  },
+  "homepage": "https://github.com/communify-agency/npm-wordpress-boilerplate#readme"
+}
